@@ -15,10 +15,10 @@ extern int micflag;
 extern uint16_t buffer_input[I2S_BUF_SIZE*2];
 
 extern UART_HandleTypeDef huart3;
-extern  I2S_HandleTypeDef hi2s3;
+extern  I2S_HandleTypeDef hi2s2;
 
 // External buffer from audio_processing.cpp
-extern uint32_t buffer_merged[1000];
+extern int32_t buffer_merged[I2S_BUF_SIZE/2];
 
 // PRINTF RETARGET - Redirect printf to UART3
 extern "C" int _write(int file, char* ptr, int len) {
@@ -28,7 +28,7 @@ extern "C" int _write(int file, char* ptr, int len) {
 }
 
 void my_main(void){
-	HAL_I2S_Receive_DMA(&hi2s3, &buffer_input[0], I2S_BUF_SIZE);
+	HAL_I2S_Receive_DMA(&hi2s2, &buffer_input[0], I2S_BUF_SIZE*2);
 	while(1){
 	}
 }
