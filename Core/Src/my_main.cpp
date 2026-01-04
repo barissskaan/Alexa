@@ -10,8 +10,9 @@
 #include <stdio.h>
 #include <cmath>
 
+extern const int I2S_BUF_SIZE = 1000;
 extern int micflag;
-extern uint16_t buffer_input[4000];
+extern uint16_t buffer_input[I2S_BUF_SIZE*2];
 
 extern UART_HandleTypeDef huart3;
 extern  I2S_HandleTypeDef hi2s3;
@@ -27,7 +28,7 @@ extern "C" int _write(int file, char* ptr, int len) {
 }
 
 void my_main(void){
-	HAL_I2S_Receive_DMA(&hi2s3, &buffer_input[0], 4000);
+	HAL_I2S_Receive_DMA(&hi2s3, &buffer_input[0], I2S_BUF_SIZE);
 	while(1){
 	}
 }
