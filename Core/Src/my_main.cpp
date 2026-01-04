@@ -10,15 +10,15 @@
 #include <stdio.h>
 #include <cmath>
 
-extern const int I2S_BUF_SIZE = 1000;
+extern const int I2S_BUF_SIZE;
 extern int micflag;
-extern uint16_t buffer_input[I2S_BUF_SIZE*2];
+extern uint16_t buffer_input[];
 
 extern UART_HandleTypeDef huart3;
 extern  I2S_HandleTypeDef hi2s2;
 
 // External buffer from audio_processing.cpp
-extern int32_t buffer_merged[I2S_BUF_SIZE/2];
+extern int32_t buffer_merged[];
 
 // PRINTF RETARGET - Redirect printf to UART3
 extern "C" int _write(int file, char* ptr, int len) {
@@ -27,8 +27,13 @@ extern "C" int _write(int file, char* ptr, int len) {
     return len;
 }
 
+static int dma_started = 0;
+
 void my_main(void){
-	HAL_I2S_Receive_DMA(&hi2s2, &buffer_input[0], I2S_BUF_SIZE*2);
+	if(!dma_started) {
+		HAL_I2S_Receive_DMA(&hi2s2, buffer_input, 2000);
+		dma_started = 1;
+	}
 	while(1){
 	}
 }

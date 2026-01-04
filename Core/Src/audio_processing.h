@@ -12,6 +12,8 @@ extern "C" {
 #include <cmath>
 #include "led_array.h"
 
+extern const int I2S_BUF_SIZE;
+
 void audioProcessingLeft();
 void audioProcessingRight();
 
