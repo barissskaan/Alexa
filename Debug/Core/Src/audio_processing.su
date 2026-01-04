@@ -1,0 +1,4 @@
+../Core/Src/audio_processing.cpp:7:17:void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef*)	24	static
+../Core/Src/audio_processing.cpp:17:17:void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef*)	24	static
+../Core/Src/audio_processing.cpp:27:6:void audioProcessingLeft()	16	static
+../Core/Src/audio_processing.cpp:36:6:void audioProcessingRight()	16	static

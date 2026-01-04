@@ -1,0 +1,2 @@
+../Core/Src/my_main.cpp:20:16:int _write(int, char*, int)	1
+../Core/Src/my_main.cpp:26:6:void my_main()	5
