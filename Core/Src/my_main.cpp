@@ -27,7 +27,7 @@ extern "C" int _write(int file, char* ptr, int len) {
 }
 
 void my_main(void){
-	HAL_I2S_Receive_DMA(&hi2s3, buffer_input, 4000);
+	HAL_I2S_Receive_DMA(&hi2s3, &buffer_input[0], 4000);
 	while(1){
 	}
 }
