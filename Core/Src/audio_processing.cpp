@@ -1,7 +1,7 @@
 #include "audio_processing.h"
-const int I2S_BUF_SIZE = 1000;
-uint16_t buffer_input[I2S_BUF_SIZE*2];
-uint32_t buffer_merged[I2S_BUF_SIZE/4];
+const int I2S_BUF_SIZE = 1000; // 1000 32-bit values
+uint16_t buffer_input[I2S_BUF_SIZE*2]; // 1000*2 16-bit values equivalent to 1000 32-bit values
+uint32_t buffer_merged[I2S_BUF_SIZE/4];  
 int micflag = 0;
 
 
