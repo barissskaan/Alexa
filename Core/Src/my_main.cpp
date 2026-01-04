@@ -12,13 +12,13 @@
 
 extern const int I2S_BUF_SIZE;
 extern int micflag;
-extern uint16_t buffer_input[];
+extern uint16_t buffer_input[2000];
 
 extern UART_HandleTypeDef huart3;
 extern  I2S_HandleTypeDef hi2s2;
 
 // External buffer from audio_processing.cpp
-extern int32_t buffer_merged[];
+extern int32_t buffer_merged[500];
 
 // PRINTF RETARGET - Redirect printf to UART3
 extern "C" int _write(int file, char* ptr, int len) {
