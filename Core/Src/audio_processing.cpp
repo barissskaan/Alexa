@@ -1,9 +1,9 @@
 #include "audio_processing.h"
-const int I2S_BUF_SIZE = 1000; // 1000 32-bit values
+
 uint16_t buffer_input[I2S_BUF_SIZE*2]; // 1000*2 16-bit values equivalent to 1000 32-bit values
 int32_t buffer_merged[I2S_BUF_SIZE/2];  
-int micflag = 0;
 
+int micflag = 0;
 
 extern "C" void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef* hi2s){
 	for(int i=0 ;i<1000;i+=4){

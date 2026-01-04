@@ -12,7 +12,7 @@ extern "C" {
 #include <cmath>
 #include "led_array.h"
 
-extern const int I2S_BUF_SIZE;
+#define I2S_BUF_SIZE 1000
 
 void audioProcessingLeft();
 void audioProcessingRight();

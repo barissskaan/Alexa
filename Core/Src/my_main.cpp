@@ -10,7 +10,6 @@
 #include <stdio.h>
 #include <cmath>
 
-extern const int I2S_BUF_SIZE;
 extern int micflag;
 extern uint16_t buffer_input[2000];
 
