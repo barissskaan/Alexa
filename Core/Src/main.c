@@ -121,10 +121,6 @@ int main(void)
   MX_I2S2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim4);
-  
-  // Mikrofon DMA başlat
-  extern uint16_t buffer_input[2000];
-  HAL_I2S_Receive_DMA(&hi2s2, buffer_input, 2000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
