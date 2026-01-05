@@ -18,6 +18,7 @@ extern  I2S_HandleTypeDef hi2s2;
 
 // External buffer from audio_processing.cpp
 extern int32_t buffer_merged[500];
+extern volatile int current_led_level;
 
 // PRINTF RETARGET - Redirect printf to UART3
 extern "C" int _write(int file, char* ptr, int len) {
@@ -29,7 +30,9 @@ extern "C" int _write(int file, char* ptr, int len) {
 void my_main(void){
 	// DMA başlatma main.c'de yapılıyor
 	while(1){
-		// Boş loop - callback'ler interrupt'ta çalışacak
+		// LED'i interrupt dışında yak (GPIO yavaş)
+		led_func(current_led_level);
+		HAL_Delay(50);  // 50ms bekle
 	}
 }
 

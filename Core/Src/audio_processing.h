@@ -14,6 +14,8 @@ extern "C" {
 
 #define I2S_BUF_SIZE 1000
 
+extern volatile int current_led_level;
+
 void audioProcessingLeft();
 void audioProcessingRight();
 
