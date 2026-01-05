@@ -16,6 +16,7 @@ extern "C" {
 
 extern volatile int current_led_level;
 
+void AudioProcessing_Enable(bool enable);
 void audioProcessingLeft();
 void audioProcessingRight();
 
