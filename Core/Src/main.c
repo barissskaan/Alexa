@@ -129,7 +129,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  sendSequence(off_sequence);
+  // sendSequence(off_sequence);
   while (1)
   {
 	 my_main();
