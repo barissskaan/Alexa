@@ -26,14 +26,10 @@ extern "C" int _write(int file, char* ptr, int len) {
     return len;
 }
 
-static int dma_started = 0;
-
 void my_main(void){
-	if(!dma_started) {
- 		HAL_I2S_Receive_DMA(&hi2s2, buffer_input, 2000);
-		dma_started = 1;
-	}
+	// DMA başlatma main.c'de yapılıyor
 	while(1){
+		// Boş loop - callback'ler interrupt'ta çalışacak
 	}
 }
 
