@@ -1,4 +1,4 @@
 ../Core/Src/audio_processing.cpp:8:17:void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef*)	3
-../Core/Src/audio_processing.cpp:18:6:void audioProcessingLeft()	2
-../Core/Src/audio_processing.cpp:26:17:void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef*)	3
-../Core/Src/audio_processing.cpp:36:6:void audioProcessingRight()	2
+../Core/Src/audio_processing.cpp:18:6:void audioProcessingLeft()	4
+../Core/Src/audio_processing.cpp:31:17:void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef*)	3
+../Core/Src/audio_processing.cpp:41:6:void audioProcessingRight()	4

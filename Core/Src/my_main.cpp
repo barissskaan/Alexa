@@ -30,7 +30,7 @@ static int dma_started = 0;
 
 void my_main(void){
 	if(!dma_started) {
-		HAL_I2S_Receive_DMA(&hi2s2, buffer_input, 2000);
+ 		HAL_I2S_Receive_DMA(&hi2s2, buffer_input, 2000);
 		dma_started = 1;
 	}
 	while(1){
