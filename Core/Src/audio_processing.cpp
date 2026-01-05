@@ -18,9 +18,14 @@ extern "C" void HAL_I2S_RxHalfCpltCallback(I2S_HandleTypeDef* hi2s){
 void audioProcessingLeft(){
 	int32_t sum = 0;
 	for(int i=0; i < 250; i++){
-		sum += abs(buffer_merged[i]>>14);
+		int32_t sample = buffer_merged[i] >> 14;  // 18-bit'ten 4-bit'e düşür
+		sum += abs(sample);
 	}
-	led_func(sum/(250*780));
+	// sum max ~2000, LED'ler için 10'a normalize et
+	int led_count = sum / 200;
+	if(led_count > 10) led_count = 10;
+	if(led_count < 0) led_count = 0;
+	led_func(led_count);
 }
 
 extern "C" void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef* hi2s){
@@ -36,8 +41,13 @@ extern "C" void HAL_I2S_RxCpltCallback(I2S_HandleTypeDef* hi2s){
 void audioProcessingRight(){
 	int32_t sum = 0;
 	for(int i=250; i < 500; i++){
-		sum += abs(buffer_merged[i]>>14);
+		int32_t sample = buffer_merged[i] >> 14;  // 18-bit'ten 4-bit'e düşür
+		sum += abs(sample);
 	}
-	led_func(sum/(250*780));
+	// sum max ~2000, LED'ler için 10'a normalize et
+	int led_count = sum / 200;
+	if(led_count > 10) led_count = 10;
+	if(led_count < 0) led_count = 0;
+	led_func(led_count);
 }
 
